@@ -2,7 +2,9 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+import { getAllFilesMetadata  } from '../lib/mdx';
+
+export default function Home({ posts }) {
   return (
     <div className={styles.container}>
       <Head>
@@ -65,5 +67,12 @@ export default function Home() {
         </a>
       </footer>
     </div>
-  )
+  );
+}
+export async function getStaticProps() {
+  const posts = await getAllFilesMetadata(); 
+  console.log(posts);
+  return {
+     props: {posts},
+  }; 
 }
