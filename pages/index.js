@@ -32,7 +32,7 @@ export default function Home({ posts }) {
             href={'/${post.slug}'} 
             className={styles.card}
             >
-              <a>
+              <a href="https://nextjs.org/docs" className={styles.card}>
                 <h2>{ post.title } &rarr;</h2>
                 <p>{post.date}</p>
               </a>  
