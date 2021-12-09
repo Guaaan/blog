@@ -29,7 +29,7 @@ export default function Home({ posts }) {
           {posts.map  (post => (
             <Link 
             key={post.slug}
-            href={'/${post.slug}'} 
+            href={`/${post.slug}`} 
             className={styles.card}
             >
               <a href="https://nextjs.org/docs" className={styles.card}>
